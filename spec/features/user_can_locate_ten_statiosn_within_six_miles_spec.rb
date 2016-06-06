@@ -14,7 +14,7 @@ feature "User can search for stations with zipcode " do
     VCR.use_cassette("locate_closest_station_by_field") do
       visit root_path
 
-      fill_in "q", with: "80203"
+      fill_in "zip", with: "80203"
       click_button "Locate"
 
       within ("li:first") do
@@ -26,3 +26,4 @@ feature "User can search for stations with zipcode " do
       end
     end
   end
+end

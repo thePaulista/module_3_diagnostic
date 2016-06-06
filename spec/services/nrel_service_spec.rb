@@ -6,13 +6,14 @@ describe 'Nrel Service' do
       service = NrelService.new
 
       stations = service.get_location(zip: "80203", distance: "6 miles", fuel_type_code: "ELEC.LPG")
-      station = stations.first
+      station = stations.last
 
       expect(stations.count).to eq 2
-      expect(station["name"]).to eq "CADACHARGEPOINT"
-      expect(station["city"]).to eq "Denver"
-      expect(station["state"]).to eq "CO"
-      expect(station["access_days_time"]).to eq "24 hours daily"
+      expect(station[:station_name]).to eq "CADACHARGEPOINT"
+      expect(station[:street_address]).to eq "290 E Speer Blvd"
+      expect(station[:city]).to eq "Denver"
+      expect(station[:state]).to eq "CO"
+      expect(station[:access_days_time]).to eq "24 hours daily"
     end
   end
 end
