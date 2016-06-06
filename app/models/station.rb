@@ -4,6 +4,7 @@ class Station < OpenStruct
   end
 
   def self.find_by(params)
+    require "pry"; binding.pry
     service.get_location(params).map { |station| new(params)}
   end
 end
