@@ -19,11 +19,11 @@ feature "User can search for stations with zipcode " do
       save_and_open_page
 
       within ("li:first") do
-        expect(page).to have_content("Name: fuel")
-        expect(page).to have_content("Address: fuel")
-        expect(page).to have_content("Fuel Type: fuel")
-        expect(page).to have_content("Distance : fuel")
-        expect(page).to have_content("Access Times : fuel")
+        expect(page).to have_content("Name: CARDACHARGEPOINT")
+        expect(page).to have_content("Address: ")
+        expect(page).to have_content("Fuel Type: ")
+        expect(page).to have_content("Distance : ")
+        expect(page).to have_content("Access Times : ")
       end
     end
   end
