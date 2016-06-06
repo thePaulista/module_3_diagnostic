@@ -35,17 +35,19 @@ RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
-VCR.configure do |c|
-  c.cassette_library_dir = "spec/casettes"
-  c.hook_into :webmock
-end
 
-Shoulda::Matchers.configure do |config|
-  config.integrate do |with|
-    with.test_framework :rspec
-    with.library :rails
-  end
-end
+VCR.configure do |c|
+   c.cassette_library_dir = 'spec/cassettes'
+   c.hook_into :webmock
+   c.configure_rspec_metadata!
+   c.allow_http_connections_when_no_cassette = true
+ end
+#Shoulda::Matchers.configure do |config|
+#  config.integrate do |with|
+#    with.test_framework :rspec
+#    with.library :rails
+#  end
+#end
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.

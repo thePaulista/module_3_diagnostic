@@ -18,6 +18,7 @@ group :development, :test do
   gem "pry-rails"
   gem "rspec-rails"
   gem "database_cleaner"
+  gem "shoulda-matchers"
   gem 'capybara'
   gem 'launchy'
   gem 'webmock'
