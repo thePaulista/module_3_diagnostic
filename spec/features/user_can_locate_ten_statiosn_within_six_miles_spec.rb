@@ -17,6 +17,7 @@ feature "User can search for stations with zipcode " do
       fill_in "q", with: "80203"
       click_button "Locate"
 
+       within ("li:first")
         expect(page).to have_content("Name: fuel")
         expect(page).to have_content("Address: fuel")
         expect(page).to have_content("Fuel Type: fuel")
